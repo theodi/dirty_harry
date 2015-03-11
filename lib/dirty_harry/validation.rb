@@ -15,6 +15,8 @@ module DirtyHarry
       end
     end
 
+    def badge
+      "#{url}.svg"
     end
 
     private

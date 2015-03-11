@@ -43,6 +43,15 @@ describe "DirtyHarry::Validation" do
     expect(csv.source).to eq("http://www.example.com/example.csv")
     expect(csv.state).to eq("invalid")
   end
+
+  it "Returns a badge" do
+    stub_request(:get, "http://csvlint.io/package/5500513863737643690d0000").
+        to_return(body: File.read(File.join(File.dirname(__FILE__), "fixtures", "package.json")),
+                  headers: {"Content-Type" => "application/json"})
+
+    csv = DirtyHarry::Validation.new(@csv)
+
+    expect(csv.badge).to eq("http://csvlint.io/validation/53566ef96373767abf010000.svg")
   end
 
 end
