@@ -4,3 +4,4 @@ Coveralls.wear!
 require 'dirty_harry'
 require 'webmock'
 require 'webmock/rspec'
+require 'pry'
