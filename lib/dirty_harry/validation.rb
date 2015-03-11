@@ -9,12 +9,20 @@ module DirtyHarry
       @csv = csv
     end
 
-    def result
-      response = JSON.parse(package)
-      response["package"]["validations"].first
+    ["url", "source", "state"].each do |k|
+      define_method(k.to_sym) do
+        result[k]
+      end
+    end
+
     end
 
     private
+
+      def result
+        @response ||= JSON.parse(package)
+        @response["package"]["validations"].first
+      end
 
       def response
         JSON.parse(self.class.post("/package.json", query: { urls: [@csv] }).body)

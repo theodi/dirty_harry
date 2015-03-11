@@ -38,11 +38,11 @@ describe "DirtyHarry::Validation" do
                   headers: {"Content-Type" => "application/json"})
 
     csv = DirtyHarry::Validation.new(@csv)
-    result = csv.result
 
-    expect(result["url"]).to eq("http://csvlint.io/validation/53566ef96373767abf010000")
-    expect(result["source"]).to eq("http://www.example.com/example.csv")
-    expect(result["state"]).to eq("invalid")
+    expect(csv.url).to eq("http://csvlint.io/validation/53566ef96373767abf010000")
+    expect(csv.source).to eq("http://www.example.com/example.csv")
+    expect(csv.state).to eq("invalid")
+  end
   end
 
 end
