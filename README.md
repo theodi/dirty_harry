@@ -27,7 +27,7 @@ Or install it yourself as:
     validation = DirtyHarry::Validation.new(URL_TO_YOUR_CSV)
     validation.url #=> http://csvlint.io/validations/53566ef96373767abf010000
     validation.source #=> URL_TO_YOUR_CSV
-    validation.state #=> One of valid, invalid or warnings
+    validation.state #=> One of 'valid', 'invalid' or 'warnings'
     validation.badge #=> http://csvlint.io/validations/53566ef96373767abf010000.svg
 
 ## Contributing
