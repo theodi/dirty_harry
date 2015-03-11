@@ -1,10 +1,12 @@
 module DirtyHarry
   class Validation
+    include HTTParty
 
-    attr_accessor :url
+    attr_accessor :urls
+    base_uri 'http://csvlint.io'
 
-    def initialize(url)
-      @url = url
+    def initialize(urls)
+      @urls = [urls].flatten
     end
 
   end
