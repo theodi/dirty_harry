@@ -1,0 +1,13 @@
+{
+  "version":"0.1",
+  "licence":"http://opendatacommons.org/licenses/odbl/",
+  "package":{
+    "validations":[
+      {
+        "url":"http://csvlint.io/validation/53566ef96373767abf010000",
+        "source":"http://www.example.com/example.csv",
+        "state":"invalid"
+      }
+    ]
+  }
+}
