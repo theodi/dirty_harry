@@ -16,7 +16,7 @@ describe "DirtyHarry::Validation" do
       with(query: {urls: [url]}).to_return(body: File.open(File.join("spec", "fixtures", "response.json")))
 
     csv = DirtyHarry::Validation.new(url)
-    csv.response
+    csv.send(:response)
 
     expect(stub).to have_been_requested.once
   end
@@ -29,7 +29,7 @@ describe "DirtyHarry::Validation" do
 
     csv = DirtyHarry::Validation.new(url)
 
-    expect(csv.package_url).to eq("http://csvlint.io/package/5500513863737643690d0000")
+    expect(csv.send(:package_url)).to eq("http://csvlint.io/package/5500513863737643690d0000")
   end
 
   it "waits for the package to be created" do

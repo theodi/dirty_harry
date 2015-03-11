@@ -14,21 +14,23 @@ module DirtyHarry
       response["package"]["validations"].first
     end
 
-    def response
-      JSON.parse(self.class.post("/package.json", query: { urls: [@url] }).body)
-    end
+    private
 
-    def package_url
-      response["package"]["url"]
-    end
-
-    def package
-      response = nil
-      until !response.nil?
-        response = self.class.get(package_url).body
+      def response
+        JSON.parse(self.class.post("/package.json", query: { urls: [@url] }).body)
       end
-      response
-    end
+
+      def package_url
+        response["package"]["url"]
+      end
+
+      def package
+        response = nil
+        until !response.nil?
+          response = self.class.get(package_url).body
+        end
+        response
+      end
 
   end
 end
