@@ -10,7 +10,7 @@ module DirtyHarry
     end
 
     def response
-      self.class.post("/package.json", query: { urls: @urls })
+      JSON.parse(self.class.post("/package.json", query: { urls: @urls }).body)
     end
 
   end

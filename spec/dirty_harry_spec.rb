@@ -20,12 +20,24 @@ describe "DirtyHarry::Validation" do
     url = "http://www.example.com/example.csv"
 
     stub = stub_request(:post, "http://csvlint.io/package.json").
-      with(query: {urls: [url]})
+      with(query: {urls: [url]}).to_return(body: File.open(File.join("spec", "fixtures", "response.json")))
 
     csv = DirtyHarry::Validation.new(url)
     csv.response
 
     expect(stub).to have_been_requested.once
+  end
+
+  it "returns a url for a validation" do
+    url = "http://www.example.com/example.csv"
+
+    stub = stub_request(:post, "http://csvlint.io/package.json").
+      with(query: {urls: [url]}).to_return(body: File.open(File.join("spec", "fixtures", "response.json")))
+
+    csv = DirtyHarry::Validation.new(url)
+    response = csv.response
+
+    expect(response["package"]["url"]).to eq("http://csvlint.io/package/5500513863737643690d0000")
   end
 
 end
