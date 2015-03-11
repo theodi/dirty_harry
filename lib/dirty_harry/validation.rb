@@ -2,11 +2,11 @@ module DirtyHarry
   class Validation
     include HTTParty
 
-    attr_accessor :urls
+    attr_accessor :url
     base_uri 'http://csvlint.io'
 
-    def initialize(urls)
-      @urls = [urls].flatten
+    def initialize(url)
+      @url = url
     end
 
     def validations
@@ -15,7 +15,7 @@ module DirtyHarry
     end
 
     def response
-      JSON.parse(self.class.post("/package.json", query: { urls: @urls }).body)
+      JSON.parse(self.class.post("/package.json", query: { urls: [@url] }).body)
     end
 
     def package_url
