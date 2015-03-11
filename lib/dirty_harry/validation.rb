@@ -9,7 +9,7 @@ module DirtyHarry
       @url = url
     end
 
-    def validation
+    def result
       response = JSON.parse(package)
       response["package"]["validations"].first
     end
