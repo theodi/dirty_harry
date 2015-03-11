@@ -8,9 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = DirtyHarry::VERSION
   spec.authors       = ["pezholio"]
   spec.email         = ["pezholio@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = "A quick and dirty wrapper around the http://csvlint.io webservice"
+  spec.homepage      = "https://github.com/theodi/dirty_harry"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
