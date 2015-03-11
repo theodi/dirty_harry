@@ -16,4 +16,16 @@ describe "DirtyHarry::Validation" do
     expect(csv.urls).to eq(urls)
   end
 
+  it "posts to csvlint" do
+    url = "http://www.example.com/example.csv"
+
+    stub = stub_request(:post, "http://csvlint.io/package.json").
+      with(query: {urls: [url]})
+
+    csv = DirtyHarry::Validation.new(url)
+    csv.response
+
+    expect(stub).to have_been_requested.once
+  end
+
 end

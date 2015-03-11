@@ -9,5 +9,9 @@ module DirtyHarry
       @urls = [urls].flatten
     end
 
+    def response
+      self.class.post("/package.json", query: { urls: @urls })
+    end
+
   end
 end
