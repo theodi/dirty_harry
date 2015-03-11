@@ -1,3 +1,11 @@
+[![Build Status](http://img.shields.io/travis/theodi/dirty_harry.svg)](https://travis-ci.org/theodi/dirty_harry)
+[![Dependency Status](http://img.shields.io/gemnasium/theodi/dirty_harry.svg)](https://gemnasium.com/theodi/dirty_harry)
+[![Coverage Status](http://img.shields.io/coveralls/theodi/dirty_harry.svg)](https://coveralls.io/r/theodi/dirty_harry)
+[![Code Climate](http://img.shields.io/codeclimate/github/theodi/dirty_harry.svg)](https://codeclimate.com/github/theodi/dirty_harry)
+[![Gem Version](http://img.shields.io/gem/v/dirty_harry.svg)](https://rubygems.org/gems/dirty_harry)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://theodi.mit-license.org)
+[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
+
 # DirtyHarry
 
 > I know what you’re thinking: 'Did he fire six shots or only five?' Well, to tell you the truth, in all this excitement, I’ve kinda lost track myself. But being this is a .44 Magnum, the most powerful handgun in the world, and would blow your head clean off, you’ve got to ask yourself one question: 'Do I feel lucky?' Well, do ya, punk?
