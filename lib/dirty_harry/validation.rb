@@ -2,11 +2,11 @@ module DirtyHarry
   class Validation
     include HTTParty
 
-    attr_accessor :url
+    attr_accessor :csv
     base_uri 'http://csvlint.io'
 
-    def initialize(url)
-      @url = url
+    def initialize(csv)
+      @csv = csv
     end
 
     def result
@@ -17,7 +17,7 @@ module DirtyHarry
     private
 
       def response
-        JSON.parse(self.class.post("/package.json", query: { urls: [@url] }).body)
+        JSON.parse(self.class.post("/package.json", query: { urls: [@csv] }).body)
       end
 
       def package_url
