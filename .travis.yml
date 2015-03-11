@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
+deploy:
+  provider: rubygems
+  api_key:
+    secure: bYWegLeur9B7imXEsGhcIzwURQwDP7lFyd/hDQmgz5Kqt2WIstrB6tSpQUx23WELpeOLrlu4dSNwO0m4htW2Tl7w8J1BQeT6iXsyu7ECzAo17tlnu7ihjbuAh166H5yCUHrYijXeD0wz0dJZjLD7Qtsbx56IMQjguOZU5dLWIHY=
+  gem: dirty_harry
+  on:
+    tags: true
+    repo: theodi/dirty_harry
