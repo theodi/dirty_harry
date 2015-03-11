@@ -35,9 +35,8 @@ describe "DirtyHarry::Validation" do
       with(query: {urls: [url]}).to_return(body: File.open(File.join("spec", "fixtures", "response.json")))
 
     csv = DirtyHarry::Validation.new(url)
-    response = csv.response
 
-    expect(response["package"]["url"]).to eq("http://csvlint.io/package/5500513863737643690d0000")
+    expect(csv.package_url).to eq("http://csvlint.io/package/5500513863737643690d0000")
   end
 
 end

@@ -13,5 +13,9 @@ module DirtyHarry
       JSON.parse(self.class.post("/package.json", query: { urls: @urls }).body)
     end
 
+    def package_url
+      response["package"]["url"]
+    end
+
   end
 end
